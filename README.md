@@ -31,6 +31,8 @@
 
 似たような用途で、ArduinoやRaspberry Piといったものが存在するので、興味があれば調べてみましょう。
 
+勘違いの内容に書いておくと、加藤製作所の建機がESP32で動いているわけではありません。
+
 ### ESP32のリファレンス
 
 https://micropython-docs-ja.readthedocs.io/ja/v1.17ja/esp32/quickref.html
@@ -42,7 +44,12 @@ https://micropython-docs-ja.readthedocs.io/ja/v1.17ja/esp32/quickref.html
 
 ### ESP32のピン一覧
 
-ピン機能一覧
+ESP32では、40本のGPIOを持ち、プログラムから各ピンの入出力を設定することができ、入力の場合にはON/OFFの読み出しを、
+出力の場合にはON/OFFの書き込みと読み出しができます。
+
+各ピンからセンサーの状態を入力として読み込んだり、出力から周辺のデバイスを操作したりすることで、制御を実現します。
+
+■　ピン機能一覧
 
 | GPIO | 特殊機能	| コメント | | GPIO | 特殊機能	| コメント |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -63,7 +70,7 @@ https://micropython-docs-ja.readthedocs.io/ja/v1.17ja/esp32/quickref.html
 | 14 | 	|  | | 36 | (VP) | 	入力専用、ADC1_0 | 
 | 15 | 	| プルダウン内部抵抗 | | 39 | (VN) | 	入力専用、ADC1_3 | 
 
-ピンの配置
+■　ピンの配置
 
 | Touch | SPI/DAC | ADC | IO | | IO | ADC | SPI/Serial  | I2C/Touch |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
