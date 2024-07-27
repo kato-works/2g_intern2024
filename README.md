@@ -38,7 +38,6 @@ https://micropython-docs-ja.readthedocs.io/ja/v1.17ja/esp32/quickref.html
 ### ESP32に組み込まれているセンサー
 
 - 温度センサー
-- ホールセンサー（磁気）
 - 静電容量タッチセンサー
 
 ### Hello Worldと表示してみよう
@@ -50,6 +49,8 @@ https://micropython-docs-ja.readthedocs.io/ja/v1.17ja/esp32/quickref.html
 ### 抵抗と電流、LEDと抵抗を接続して光らせてみよう
 
 ### 人感センサーを接続して、状態をシリアルに表示しよう
+
+### イベントハンドラを実装してみよう
 
 ### Wi-Fiに接続してデータを送信してみよう
 
