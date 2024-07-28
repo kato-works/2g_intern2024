@@ -61,6 +61,6 @@ print(message)
 def print_with_exclamation(message, count=3):
   print(message + '!' * count)
 
-print('Hello')
+print_with_exclamation('Hello')
 ```
 
