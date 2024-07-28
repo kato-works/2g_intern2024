@@ -35,7 +35,9 @@
 
 ### ESP32のリファレンス
 
-https://micropython-docs-ja.readthedocs.io/ja/v1.17ja/esp32/quickref.html
+クイックスタートや、APIのリファレンスは下記から参照できます。
+
+[ESP32 用クイックリファレンス](https://micropython-docs-ja.readthedocs.io/ja/latest/esp32/quickref.html)
 
 ### ESP32に組み込まれているセンサー
 
