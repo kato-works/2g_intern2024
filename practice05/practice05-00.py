@@ -4,7 +4,7 @@ from machine import Pin
 
 def blink_led(pin, sleep_time_ms):
     """
-    指定されたスリープ間隔でオンボードLEDを明滅させ、
+    指定されたスリープ間隔でLEDを明滅させ、
     中断されるまで繰り返す。
 
     Parameters
