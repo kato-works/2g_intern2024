@@ -43,17 +43,22 @@
 
 ### 実習に必要なツール・ファームなど
 
+シリアルドライバイアは、接続した際にCOMポートに表示がされない場合にインストールしてください。（WindosではCOM、Macでは/dev/tty.*を確認）
+
 - [Thonny](https://thonny.org/) Python IDE for beginners
 - [FirmWare](https://micropython.org/download/ESP32_GENERIC/) ESP32 MicroPython FirmWare
-- ブレッドボード
-- LED
-- 抵抗器
-- ジャンパー線数本
+- [CP210x USB Serial Driver](https://jp.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=downloads) シリアル接続ドライバ
 
 ### 利用するデバイス
 
+サンプルプログラムでは、以下のデバイスを想定しています。
+
 - [開発ボード ESP32 ESP-WROOM-32 WiFi Bluetooth (USB Type-C)](https://www.amazon.co.jp/gp/product/B0C1444DRX/ref=ppx_yo_dt_b_asin_title_o03_s00?ie=UTF8&th=1)
 - [IRヒューマンセンサーAM312](https://www.amazon.co.jp/gp/product/B084VMYMFZ/ref=ppx_yo_dt_b_asin_title_o02_s00?ie=UTF8&th=1)
+- ブレッドボード（ESP32-Devの幅が独特なので、通常の５穴のボードであれば２枚必要）
+- LED（3.3Vで駆動する任意のLED１個）
+- 抵抗器（3.3V電圧に応じたLEDに対する抵抗１個）
+- ジャンパー線数本
 
 ### ESP32を使って実際のIoTセンサーデバイスを作成しよう。
 
