@@ -74,10 +74,10 @@ import network
 SSID = 'intern2024'       # Wi-FiのSSID
 PASSWORD = 'pasword2024'  # Wi-Fiのパスワード
 
-wlan = network.WLAN(network.STA_IF)
-wlan.active(True)
-wlan.connect(SSID, PASSWORD)
-while not wlan.isconnected():
+wlan = network.WLAN(network.STA_IF)  # ステーションインターフェース（STAモード）で初期化
+wlan.active(True)  # チップを起動
+wlan.connect(SSID, PASSWORD)  # Wi-Fiアクセスポイントへ接続
+while not wlan.isconnected():  # 接続状態になるまでループして待機
     print('Connecting to network...')
     time.sleep(1)
 print('Network connected:', wlan.ifconfig())
