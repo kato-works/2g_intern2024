@@ -1,9 +1,11 @@
 import time
 
+running = True
+
 def print_messages(messages, sleep_time_ms):
     """
     指定されたメッセージの配列を、指定されたスリープ間隔で順に表示し、
-    中断されるまで繰り返す。
+    KeyboardInterruptで中断されるか、runnningがFalseに設定されるまで繰り返す。
 
     Parameters
     ----------
@@ -13,13 +15,15 @@ def print_messages(messages, sleep_time_ms):
         表示間隔（ミリ秒）
     """
     try:
-        while True:
+        while running:
             for message in messages:  # 指定された配列のメッセージを繰り返す
                 print(message)
                 time.sleep_ms(sleep_time_ms)  # 指定ミリ時間、一時停止する
 
     except KeyboardInterrupt:  # Ctl-Cによる中断を検出
         print("例外'KeyboardInterrupt'を捕捉")
+    
+    return
 
 if __name__ == "__main__":
     SLEEP_TIME_MS = 1000
