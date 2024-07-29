@@ -106,7 +106,7 @@ GPIOを入力の場合にはON/OFFの読み出しを、出力の場合にはON/O
 | T5 | HSPIQ | A15(2-5) | GPIO12 | | GPIO2 | A12(2-2) | HSPIWP | T2 |
 | T4 | HSPID | A14(2-4) | GPIO13 | | GPIO15 | A13(2-3) | HSPICS0 | T3 |
 | | | | GND | | GND | | | |
-| | | | 5V | | 3.3V | | | |
+| | | | 5V | USB | 3.3V | | | |
 
 ■　注意
 - Wi-Fiが有効な場合、HSPI（SPI3）・ADC2のチャンネルは使用できません
