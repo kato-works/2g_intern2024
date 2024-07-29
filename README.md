@@ -41,7 +41,21 @@
 
 ## 実習
 
-ESP32を使って実際のIoTセンサーデバイスを作成しよう。
+### 実習に必要なツール・ファームなど
+
+- [Thonny](https://thonny.org/) Python IDE for beginners
+- [FirmWare](https://micropython.org/download/ESP32_GENERIC/) ESP32 MicroPython FirmWare
+- ブレッドボード
+- LED
+- 抵抗器
+- ジャンパー線数本
+
+### 利用するデバイス
+
+- [開発ボード ESP32 ESP-WROOM-32 WiFi Bluetooth (USB Type-C)](https://www.amazon.co.jp/gp/product/B0C1444DRX/ref=ppx_yo_dt_b_asin_title_o03_s00?ie=UTF8&th=1)
+- [IRヒューマンセンサーAM312](https://www.amazon.co.jp/gp/product/B084VMYMFZ/ref=ppx_yo_dt_b_asin_title_o02_s00?ie=UTF8&th=1)
+
+### ESP32を使って実際のIoTセンサーデバイスを作成しよう。
 
 - [01.Hello Worldと表示してみよう](practice01/ReadMe.md)
 - [02.オンボードのLEDを光らせてみよう](practice02/ReadMe.md)
