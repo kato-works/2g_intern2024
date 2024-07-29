@@ -62,6 +62,8 @@
 
 ### ESP32を使って実際のIoTセンサーデバイスを作成しよう。
 
+課題をクリアして、自分でIoTデバイスを作れるようになろう！
+
 - [01.Hello Worldと表示してみよう](practice01/ReadMe.md)
 - [02.オンボードのLEDを光らせてみよう](practice02/ReadMe.md)
 - [03.オンボードの静電容量センサーを読み込んでみよう](practice03/ReadMe.md)
