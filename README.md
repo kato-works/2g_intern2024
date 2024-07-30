@@ -61,7 +61,11 @@ IoTでは、データを収集すること以上に、データを活用する�
 
 - [Thonny](https://thonny.org/) Python IDE for beginners
 - [FirmWare](https://micropython.org/download/ESP32_GENERIC/) ESP32 MicroPython FirmWare
-- [CP210x USB Serial Driver](https://jp.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=downloads) シリアル接続ドライバ
+- [CH340 Serial Driver](esp32_doc/CH341SER.zip) シリアル接続ドライバ
+
+※シリアルドライバは、開発ボードの実装メーカーによって異なるので要注意です。オフィシャルサイトにも別のドライバのリンクが張られているので、マウントできなければこちらを試してください。
+
+[Establish Serial Connection with ESP32](https://docs.espressif.com/projects/esp-idf/en/stable/esp32/get-started/establish-serial-connection.html)
 
 ### 利用するデバイス
 
@@ -73,6 +77,31 @@ IoTでは、データを収集すること以上に、データを活用する�
 - LED（3.3Vで駆動する任意のLED１個）
 - 抵抗器（3.3V電圧に応じたLEDに対する抵抗１個）
 - ジャンパー線数本
+
+### 開発環境のセットアップとESP32へのファームウエアの書き込み
+
+■ PCとの接続（ドライバのインストール）
+
+1. ESP32のFirmwareをダウンロード
+   - 本実習ではESP32_GENERIC-20240602-v1.23.0.binで動作確認を行っています
+1. ESP32をPCにUSBケーブルで接続
+1. Windowsの「デバイスマネージャ」を起動し「ポート(COMとLPT)」に「USB-SERIAL CH340 (COMXX) 」と表示されていることを確認
+   - COMXXは各自で異なるので、メモしてください
+1. USB-SERIALの表示がない場合には、先述のCH340のドライバをインストールして再接続
+
+■ ファームウェアの書き込み
+
+1. ThonnyをPCにインストール
+1. Thonnyを起動して、上部メニューの「Tools」-「Options」を選択
+1. 「Thonny Options」画面の、「Interpreter」のタブを開く
+1. Which kind of interpreter から「MicroPython(ESP32)」を選択、Port WebREPLから、先ほどメモしたCOMの番号を選択
+1. 「Install or Update MicroPython (esptool)」のリンクを選択
+1. 「Install MicroPython (esptool)」のTarget portから、先ほどメモしたCOMの番号を選択
+1. 下部の「≡」からSelect local MicroPython imageを選択し、先ほどダウンロードしたFirmwareを選択する。
+1. 「Install」ボタンを押すと、書き込みがはじまる
+1. 書き込みが完了したら、「Cancel」を押して「Install or Update MicroPython (esptool)」画面を閉じる
+1. 「Thonny Options」画面の「OK」を押してオプション画面を閉じる
+
 
 ### ESP32を使って実際のIoTセンサーデバイスを作成しよう。
 
