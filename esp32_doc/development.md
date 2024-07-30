@@ -11,7 +11,7 @@
 
 Thonny は、初心者向けに設計された Python 用の無料のオープンソース統合開発環境です。エストニアのプログラマー、Aivar Annamaa によって作成されました。
 
-機能は限定的ですが、Raspberry Pi / Arduino / ESP32 などのMicroPythonの開発によく用いられます。
+機能は限定的ですが、Raspberry Pi / Arduino / ESP32 などでMicroPythonを動かす際の開発によく用いられます。
 
 ## 表示の変更
 
