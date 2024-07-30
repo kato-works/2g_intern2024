@@ -102,6 +102,10 @@ IoTでは、データを収集すること以上に、データを活用する�
 1. 書き込みが完了したら、「Cancel」を押して「Install or Update MicroPython (esptool)」画面を閉じる
 1. 「Thonny Options」画面の「OK」を押してオプション画面を閉じる
 
+■ プログラム実行の確認
+
+1. Thonnyの上部の入力欄に、print('Hello')と入力し「F5」ボタンまたは緑の「Run」ボタンを押下
+1. 下部の出力に"Hello"と表示されることを確認
 
 ### ESP32を使って実際のIoTセンサーデバイスを作成しよう。
 
