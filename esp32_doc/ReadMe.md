@@ -20,8 +20,6 @@ GPIOを入力の場合にはON/OFFの読み出しを、出力の場合にはON/O
 
 各ピンからセンサーの状態を入力として読み込んだり、出力から周辺のデバイスを操作したりすることで、制御を実現します。
 
-■　ピン機能一覧
-
 | GPIO | 特殊機能 | コメント |
 | --- | --- | --- |
 | 0 | BOOT/Flash Button | プルアップ内部抵抗 |
@@ -57,32 +55,15 @@ GPIOを入力の場合にはON/OFFの読み出しを、出力の場合にはON/O
 | 36 | (VP) | 入力専用、ADC1_0 |
 | 39 | (VN) | 入力専用、ADC1_3 |
 
-■　ピンの配置
+> [!WARNING]
+> - Wi-Fiが有効な場合、HSPI（SPI3）・ADC2のチャンネルは使用できません
+> - GPIO6〜GPIO11は内部のフラッシュメモリに利用されているため使用できません
 
-| Touch | SPI/DAC | ADC | IO | | IO | ADC | SPI/Serial  | I2C/Touch |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| | | | EN | | GPIO23 | |  VSPID | |
-| | | A0(1-0) | GPI 36(VP) | | GPIO22 | | VSPIWP | SCL |
-| | | A3(1-3) | GPI 39(VN) | | GPIO1 | | TXD0 | |
-| | | A6(1-6) | GPI 34 | | GPIO3 | | RXD0 | |
-| | | A7(1-7) | GPI 35 | | GPIO21 | | VSPIHD | SDA |
-| T9 | | A4(1-4) | GPIO32 | | GPIO19 | | VSPIQ | |
-| T8 | | A5(1-5) | GPIO33 | | GPIO18 | | VSPICLK | |
-| | DAC_1 | A18(2-8) | GPIO25 | | GPIO5 | | VSPICS0 | |
-| | DAC_2 | A19(2-9) | GPIO26 | | GPIO17 | | TXD2 | |
-| T7 | | A17(2-7) | GPIO27 | | GPIO16 | | RXD2 | |
-| T6 | HSPICLK | A16(2-6) | GPIO14 | | GPIO4 | A10(2-0) | HSPIHD | T0 |
-| T5 | HSPIQ | A15(2-5) | GPIO12 | | GPIO2 | A12(2-2) | HSPIWP | T2 |
-| T4 | HSPID | A14(2-4) | GPIO13 | | GPIO15 | A13(2-3) | HSPICS0 | T3 |
-| | | | GND | | GND | | | |
-| | | | 5V | USB | 3.3V | | | |
+## ピンの配置
 
-■　注意
+<img alt="esp32_30pin.jpg" src="esp32_30pin.jpg" width="600px">
 
-- Wi-Fiが有効な場合、HSPI（SPI3）・ADC2のチャンネルは使用できません
-- GPIO6〜GPIO11は内部のフラッシュメモリに利用されているため使用できません
-
-■　参考
+## 参考
 
 - UART: 非同期式シリアルで２本で通信、機器間での通信に利用することが多い
   - 送信（TXD）
