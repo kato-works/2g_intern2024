@@ -25,6 +25,8 @@ ESP32は静電容量の測定が可能なピンが存在します。人がピン
 センサーがグラウンドに繋がると、エラーが出るので対処したプログラミングが出来ると尚良いでしょう。
 
 ```text
+Traceback (most recent call last):
+  File "<stdin>", line 7, in <module>
 ValueError: Touch pad error
 ```
 
