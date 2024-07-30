@@ -20,7 +20,8 @@ def blink_led(pin, sleep_time_ms):
 
     try:
         while True:
-            if led.value() == 0:
+            value = led.value()
+            if value == 0:
                 # 現在が消灯中であれば点灯させる
                 led.on()
             else:

@@ -34,7 +34,6 @@ def sensor_triggerd(sensor_pin):
     else:
         print('Sensor: OFF')
         led_sensor_detect.off()
-        data['AM312'] = 0
         data = {
             'name': 'KATO-WORKS',
             'AM312': 'OFF',
