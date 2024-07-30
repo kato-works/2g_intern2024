@@ -32,6 +32,8 @@ IoTでは、データを収集すること以上に、データを活用する�
 
 今回は、ESP-WROOM-32(ESP32)を使ってIoTの基本を勉強します。
 
+<img alt="esp32" src="esp32_doc/esp32.jpg" width="200pix"/>
+
 "ESP32"は上海のEspressif Systems社が開発し台湾のTSMCが製造する、Wi-FiとBluetoothを搭載したSoCマイクロコントローラです。
 動作温度が-40℃から＋125℃まで安定した動作が可能で、超低消費電力設計で、多様な機能を実装した安価な製品で、IoTギークに大人気な製品です。
 
