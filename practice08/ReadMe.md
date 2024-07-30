@@ -146,3 +146,5 @@ response = urequests.post(url, json=data)  # POSTリクエストによるデー�
 print('Response status:', response.status_code)  # POST処理結果
 print('Response content:', response.text)  # サーバから返却されたデータ
 ```
+
+[トップへ戻る](../README.md)

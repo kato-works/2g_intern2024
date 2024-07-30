@@ -50,3 +50,5 @@ ir_sensor = Pin(4, Pin.IN)  # GPIO4を、入力ピンとして設定
 value = ir_sensor.value()  # ピンの値を読み込む
 print(f'ir_sensor: {value}')
 ```
+
+[トップへ戻る](../README.md)
