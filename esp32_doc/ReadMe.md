@@ -1,7 +1,10 @@
 
-# ESP32のリファレンス
+# ESP32 リファレンス
+
+<img alt="esp32" src="esp32.jpg" width="200pix"/>
 
 クイックスタートや、APIのリファレンスは下記から参照できます。
+さらに詳細が知りたければ、じっくり読んでみましょう。
 
 [ESP32 用クイックリファレンス](https://micropython-docs-ja.readthedocs.io/ja/latest/esp32/quickref.html)
 
