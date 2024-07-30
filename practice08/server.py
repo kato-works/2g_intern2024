@@ -1,8 +1,12 @@
 # POSTされたパラメータを大きく表示するだけのサーバ
 from datetime import datetime
+
+from flask import Flask
+from flask import request
+from flask import jsonify
+
 import tkinter as tk
 from tkinter.scrolledtext import ScrolledText
-from flask import Flask, request, jsonify
 from tkinter import font
 
 import threading
@@ -12,15 +16,41 @@ import queue
 # Flaskアプリケーションの設定
 app = Flask(__name__)
 
-@app.route('/', methods=['POST'])
+last_post_name = 'KATO-WORKS'
+last_update = datetime.now().isoformat()
+
+@app.route('/', methods=['POST', 'GET'])
 def post_data():
     """
     データがPOSTされたら、キューに追加
     """
-    data = request.get_json()
-    json_data = jsonify(data)
-    app.queue.put(str(data))
-    return {'server_time': datetime.now().isoformat()}
+    global last_post_name, last_update
+
+    if request.method == 'GET':
+        data = request.args.to_dict()
+        print(f'GET param:{data}')
+        app.queue.put('GET:' + str())
+        # GETではデータの更新はしない
+        result = {
+            'method': 'GET', 
+            'name':last_post_name, 
+            'last_update': last_update
+        }
+    else:
+        data = request.get_json()
+        print(f'POST param:{data}')
+        app.queue.put('POST:' + str(data))
+        # POSTされたデータにnameが含まれていれば更新する
+        if 'name' in data:
+            last_post_name = data['name']
+            last_update = datetime.now().isoformat()
+        
+        # サーバの現在時刻を返却する
+        result = {
+            'server_time': datetime.now().isoformat()
+        }
+
+    return jsonify(result)
 
 
 class FlaskThread(threading.Thread):

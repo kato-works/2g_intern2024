@@ -2,6 +2,11 @@
 
 ## 08.Wi-Fiに接続してデータを送信してみよう
 
+本練習の目的
+
+- デバイスをネットワークに接続する
+- HTTPの基本を理解する
+
 ESP32は、Wi-FiやBluetoothを搭載しており、簡単に他のデバイスと通信したり、
 サーバと通信したりすることが出来ます。
 
@@ -87,6 +92,31 @@ while not wlan.isconnected():  # 接続状態になるまでループして待�
 print('Network connected:', wlan.ifconfig())
 ```
 
+WebサーバからGETリクエストによるデータの取得
+
+```python
+import urequests  # HTTP通信をするライブラリをインポート
+
+url = 'http://192.168.4.1:5000/'  # GETリクエストを送信するURL
+response = urequests.get(url)  # GETリクエストの送信
+
+print('Response status:', response.status_code)  # GET処理結果
+print('Response content:', response.text)  # サーバから返却されたデータ
+```
+
+WebサーバからGETリクエストによるデータの送信
+
+```python
+import urequests
+
+# GETでパラメータを送る際には、URLにデータが入ります。
+url = 'http://192.168.4.1:5000/?name=KATO-WORKS&age=129' 
+response = urequests.get(url)  # GETリクエストの送信
+
+print('Response status:', response.status_code)  # GET処理結果
+print('Response content:', response.text)  # サーバから返却されたデータ
+```
+
 Webサーバへのデータの送信
 
 ```python
@@ -94,10 +124,12 @@ import urequests
 
 url = 'http://192.168.4.1:5000/'  # POSTリクエストを送信するURL
 
+# サーバに送信するデータ
 data = {
     'name': 'KATO-WORKS',
 }
-response = urequests.post(url, json=data)
-print('Response status:', response.status_code)
-print('Response content:', response.text)
+response = urequests.post(url, json=data)  # POSTリクエストによるデータの送信
+
+print('Response status:', response.status_code)  # POST処理結果
+print('Response content:', response.text)  # サーバから返却されたデータ
 ```
