@@ -1,6 +1,7 @@
 import time
 import esp32
 
+
 def fahrenheit_to_celsius(temperature_fahrenheit):
     """
     華氏を摂氏に変換する
@@ -12,6 +13,7 @@ def fahrenheit_to_celsius(temperature_fahrenheit):
     """
     temperature_celsius = (temperature_fahrenheit - 32) * 5.0 / 9.0
     return int(temperature_celsius)
+
 
 def read_temperature(sleep_time_ms):
     """
@@ -29,6 +31,7 @@ def read_temperature(sleep_time_ms):
         temperature_celsius = fahrenheit_to_celsius(temperature_fahrenheit)
         print(f'temperature_celsius: {temperature_celsius} ℃')
         time.sleep_ms(sleep_time_ms)
+
 
 if __name__ == "__main__":
     SLEEP_TIME_MS = 1000

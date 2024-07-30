@@ -11,7 +11,8 @@ ESP32は内部温度を測定できるので、温度を測定してみよう。
 ### 以下を実行して結果を確認してみましょう
 
 華氏で温度を計測する
-```
+
+```python
 import esp32
 
 temperature_fahrenheit = esp32.raw_temperature() # MCUの内部温度を華氏で読み取る
@@ -19,7 +20,8 @@ print(f'temperature_fahrenheit: {temperature_fahrenheit} ℉')
 ```
 
 華氏と摂氏を変換する
-```
+
+```python
 def fahrenheit_to_celsius(temperature_fahrenheit):
     temperature_celsius = (temperature_fahrenheit - 32) * 5.0 / 9.0
     return int(temperature_celsius)

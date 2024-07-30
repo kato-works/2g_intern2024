@@ -1,6 +1,7 @@
 import time
 from machine import Pin
 
+
 def read_pin(pin_num, sleep_time_ms):
     """
     指定されたスリープ間隔でPINの状態を読み込む、
@@ -19,6 +20,7 @@ def read_pin(pin_num, sleep_time_ms):
         value = pin.value()
         print(f'GPIO{pin_num}: {value}')
         time.sleep_ms(sleep_time_ms)
+
 
 if __name__ == "__main__":
     SLEEP_TIME_MS = 1000

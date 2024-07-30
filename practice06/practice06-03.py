@@ -4,6 +4,7 @@ import time
 # センサーの反応した回数
 count = 0
 
+
 def sensor_trigger(pin):
     """
     センサーがONまたはOFFに遷移したときに、割り込み処理として呼ばれる
@@ -19,6 +20,9 @@ def sensor_trigger(pin):
         print(f'Pin ON: {count}')
     else:
         print('Pin OFF.')
+    
+    return
+
 
 def set_trigger(pin_no):
     """
@@ -33,6 +37,8 @@ def set_trigger(pin_no):
     pin = Pin(pin_no, Pin.IN)
     # 割り込みの設定（ピンが立ち上がるときに割り込みを発生）
     pin.irq(trigger=Pin.IRQ_RISING | Pin.IRQ_FALLING, handler=sensor_trigger)
+
+    return
 
 
 if __name__ == "__main__":

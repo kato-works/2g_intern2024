@@ -22,6 +22,7 @@ USRE_NAME = 'KATO-WORKS'
 sensor_status = 0  # 前回割り込み時のセンサーの状態
 count = 0   # センサーの反応回数
 
+
 def sensor_triggerd(sensor_pin):
     """
     センサーが押されたら
@@ -53,6 +54,7 @@ def sensor_triggerd(sensor_pin):
 
     return
 
+
 def button_push(button_pin):
     """
     ボタンが押された際には、現在の状態を通知する
@@ -71,6 +73,7 @@ def button_push(button_pin):
     response = post_data(URL, data)
 
     return
+
 
 def connect_wifi(ssid, password):
     """
@@ -91,6 +94,7 @@ def connect_wifi(ssid, password):
     print('Network connected:', wlan.ifconfig())
     return wlan
 
+
 def post_success(interval=0.5):
     """
     POST成功（LEDを１回0.5秒点灯）
@@ -98,6 +102,9 @@ def post_success(interval=0.5):
     led_post_status.on()
     time.sleep(interval)
     led_post_status.off()
+
+    return
+
 
 def post_failed(interval=0.1, count=3):
     """
@@ -108,6 +115,9 @@ def post_failed(interval=0.1, count=3):
         time.sleep(interval)
         led_post_status.off()
         time.sleep(interval)
+
+    return
+
 
 def post_data(url, data):
     """
@@ -142,7 +152,9 @@ if __name__ == "__main__":
     # Wi-Fiに接続
     wlan = connect_wifi(SSID, PASSWORD)
     
+    # センサーへのトリガ設定
     sensor.irq(trigger=Pin.IRQ_FALLING | Pin.IRQ_RISING, handler=sensor_triggerd) 
+    # ボタンへのトリガ設定
     button.irq(trigger=Pin.IRQ_FALLING, handler=button_push)
 
     try:
@@ -155,4 +167,3 @@ if __name__ == "__main__":
 
     # WiFiから切断
     wlan.disconnect()
-

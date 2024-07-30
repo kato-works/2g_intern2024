@@ -4,7 +4,7 @@
 
 ESP32は静電容量の測定が可能なピンが存在します。人がピンに触ると、ピンにたまった電化が解放されるので数字が下がり、タッチセンサーとして利用することが出来ます。
 
-### 0.2秒間隔で静電容量センサーの値を読み込み、タッチされたら数字がどのように変化するのか確認しましょう。
+### 0.2秒間隔で静電容量センサーの値を読み込み、タッチされたら数字がどのように変化するのか確認しましょう
 
 利用可能なピンは、ピン一覧のTouchの列に記載のあるピンですが、GPIO2は別の機能（LED）が割りあてられているので、別のピンを選びましょう。
 
@@ -18,7 +18,8 @@ ESP32は静電容量の測定が可能なピンが存在します。人がピン
 - T9 : GPIO32
 
 センサーがグラウンドに繋がると、エラーが出るので対処したプログラミングが出来ると尚良いでしょう。
-```
+
+```text
 ValueError: Touch pad error
 ```
 
@@ -27,18 +28,21 @@ ValueError: Touch pad error
 ### 以下を実行して結果を確認してみましょう
 
 センサーの値を読み込む
-```
+
+```python
 from machine import Pin
 from machine import TouchPad  # ライブラリからTouchPadを読み込む
 
-pin = Pin(32)
+# TouchPadで利用する際には、IN/OUTのモード設定は不要（INに設定してもよい）
+pin = Pin(32, Pin.IN)
 touch_pad = TouchPad(pin)  # ピン32をタッチパッドとして設定する
 touch_value = touch_pad.read()  # タッチパッドの静電容量を読み込む
 print(f'Touch value:{touch_value}')
 ```
 
 エラーハンドリング
-```
+
+```python
 from machine import Pin
 from machine import TouchPad
 

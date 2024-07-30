@@ -1,6 +1,7 @@
 import time
 
-running = True
+running = True  # 実行中フラグ
+
 
 def print_messages(messages, sleep_time_ms):
     """
@@ -25,10 +26,10 @@ def print_messages(messages, sleep_time_ms):
     
     return
 
+
 if __name__ == "__main__":
     SLEEP_TIME_MS = 1000
     print_messages(
         messages=['Hello', 'World'],
         sleep_time_ms=SLEEP_TIME_MS,
     )
-

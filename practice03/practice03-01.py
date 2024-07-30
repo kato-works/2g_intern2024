@@ -2,6 +2,7 @@ import time
 from machine import Pin
 from machine import TouchPad
 
+
 def read_touch_pad(pin, sleep_time_ms):
     """
     指定されたスリープ間隔でTouchPadの静電容量を読み込む、
@@ -21,6 +22,7 @@ def read_touch_pad(pin, sleep_time_ms):
         touch_value = touch_pad.read()  # タッチパッドの静電容量の読み込み
         print(f'Touch value:{touch_value}')
         time.sleep_ms(sleep_time_ms)
+
 
 if __name__ == "__main__":
     SLEEP_TIME_MS = 200

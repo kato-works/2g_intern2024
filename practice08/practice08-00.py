@@ -6,6 +6,7 @@ SSID = 'intern2024'       # Wi-FiのSSID
 PASSWORD = 'pasword2024'  # Wi-Fiのパスワード
 URL = 'http://192.168.4.1:5000/'  # POSTリクエストを送信するURL
 
+
 def connect_wifi(ssid, password):
     """
     Wi-Fiへ接続
@@ -25,6 +26,7 @@ def connect_wifi(ssid, password):
     print('Network connected:', wlan.ifconfig())
     return wlan
 
+
 def post_data(url, data):
     """
     WebサーバへデータのPOST実行
@@ -39,6 +41,7 @@ def post_data(url, data):
     print('Response status:', response.status_code)
     print('Response content:', response.text)
     return response
+
 
 # Wi-Fiに接続
 wlan = connect_wifi(SSID, PASSWORD)

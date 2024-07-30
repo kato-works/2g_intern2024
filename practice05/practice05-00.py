@@ -26,6 +26,8 @@ def blink_led(pin, sleep_time_ms):
     except KeyboardInterrupt:  # Ctl-Cによる中断を検出
         print("例外'KeyboardInterrupt'を捕捉")
         led.off()
+    
+    return
 
 
 if __name__ == "__main__":

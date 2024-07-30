@@ -11,4 +11,3 @@ try:
 
 except KeyboardInterrupt:  # Ctl-Cによる中断を検出
     print("例外'KeyboardInterrupt'を捕捉")
-

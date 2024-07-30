@@ -1,7 +1,9 @@
 import time
 from machine import Pin
 
+running = True
 ON_BOAD_LED = 2
+
 
 def blink_led(pin, sleep_time_ms):
     """
@@ -16,8 +18,9 @@ def blink_led(pin, sleep_time_ms):
         明滅間隔（ミリ秒）
     """
     led = Pin(pin, Pin.OUT)
+
     try:
-        while True:
+        while running:
             # 前回と異なる値を生成する
             value = (led.value() + 1) % 2
             led.value(value) 
@@ -27,6 +30,9 @@ def blink_led(pin, sleep_time_ms):
     except KeyboardInterrupt:  # Ctl-Cによる中断を検出
         print("例外'KeyboardInterrupt'を捕捉")
         led.off()
+    
+    return
+
 
 if __name__ == "__main__":
     SLEEP_TIME_MS = 500
@@ -34,4 +40,3 @@ if __name__ == "__main__":
         pin=ON_BOAD_LED,
         sleep_time_ms=SLEEP_TIME_MS,
     )
-

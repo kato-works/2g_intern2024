@@ -2,6 +2,7 @@ import time
 from machine import Pin
 from machine import TouchPad
 
+
 def read_touch_pad(touch_pin, sleep_time_ms, threshold: int = 150):
     """
     指定されたスリープ間隔でTouchPadの静電容量を読み込む、
@@ -21,8 +22,6 @@ def read_touch_pad(touch_pin, sleep_time_ms, threshold: int = 150):
 
     try:
         while True:
-            touch_value = touch_pad.read()  # タッチパッドの静電容量の読み込み
-
             try:
                 touch_value = touch_pad.read()
             except ValueError:  # ValueErrorが発生したら、-1を読み込み値に設定する
@@ -39,6 +38,9 @@ def read_touch_pad(touch_pin, sleep_time_ms, threshold: int = 150):
             
     except KeyboardInterrupt:  # Ctl-Cによる中断を検出
         print("例外'KeyboardInterrupt'を捕捉")
+    
+    return
+
 
 if __name__ == "__main__":
     SLEEP_TIME_MS = 200

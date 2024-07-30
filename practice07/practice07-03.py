@@ -3,6 +3,7 @@ from machine import Pin
 
 led = None
 
+
 def set_event(led_pin_no=2, button_pin_no=0):
     """
     PINにイベントを設定
@@ -18,6 +19,8 @@ def set_event(led_pin_no=2, button_pin_no=0):
     led = Pin(led_pin_no, Pin.OUT)
     button = Pin(button_pin_no, Pin.IN)
     button.irq(trigger=Pin.IRQ_FALLING | Pin.IRQ_RISING, handler=button_triggerd) 
+
+    return
 
 
 def button_triggerd(pin):
@@ -35,6 +38,9 @@ def button_triggerd(pin):
     else:
         led.off()
 
+    return
+
+
 if __name__ == "__main__":
     led_pin_no = 2
     button_pin_no = 0
@@ -48,4 +54,3 @@ if __name__ == "__main__":
         print("例外'KeyboardInterrupt'を捕捉")
         if led is not None:
             led.off()
-

@@ -3,6 +3,7 @@ from machine import Pin
 
 led = None
 
+
 def set_event(led_pin_no=2, button_pin_no=0):
     """
     PINにイベントを設定
@@ -17,7 +18,9 @@ def set_event(led_pin_no=2, button_pin_no=0):
     global led
     led = Pin(led_pin_no, Pin.OUT)
     button = Pin(button_pin_no, Pin.IN)
-    button.irq(trigger=Pin.IRQ_FALLING, handler=button_push) 
+    button.irq(trigger=Pin.IRQ_FALLING, handler=button_push)
+
+    return
 
 
 def button_push(pin):
@@ -33,7 +36,10 @@ def button_push(pin):
     print(f'PIN: {pin}')
     # 前回と異なる値を生成する
     value = (led.value() + 1) % 2
-    led.value(value) 
+    led.value(value)
+
+    return
+
 
 if __name__ == "__main__":
     led_pin_no = 2
@@ -48,4 +54,3 @@ if __name__ == "__main__":
         print("例外'KeyboardInterrupt'を捕捉")
         if led is not None:
             led.off()
-

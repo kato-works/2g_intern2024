@@ -7,6 +7,7 @@
 ESP32では、ピンの状態変化を検出して関数を呼び出す、割り込みハンドラの実装が可能です。
 
 ```python
+# pinに、Pin.IRQ_FALLINGが発生したら、関数handlerを呼び出す
 pin.irq(trigger=Pin.IRQ_FALLING, handler=handler) 
 ```
 

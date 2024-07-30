@@ -1,6 +1,7 @@
 import time
 from machine import Pin
 
+
 def read_pin(pin_no, sleep_time_ms):
     """
     指定されたスリープ間隔でPINの状態を読み込む、
@@ -21,6 +22,8 @@ def read_pin(pin_no, sleep_time_ms):
             time.sleep_ms(sleep_time_ms)
     except KeyboardInterrupt:  # Ctl-Cによる中断を検出
         print("例外'KeyboardInterrupt'を捕捉")
+
+    return
 
 
 if __name__ == "__main__":

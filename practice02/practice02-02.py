@@ -3,6 +3,7 @@ from machine import Pin
 
 ON_BOAD_LED = 2
 
+
 def blink_led(pin, sleep_time_ms):
     """
     指定されたスリープ間隔でオンボードLEDを明滅させ、
@@ -16,6 +17,7 @@ def blink_led(pin, sleep_time_ms):
         明滅間隔（ミリ秒）
     """
     led = Pin(pin, Pin.OUT)
+
     try:
         while True:
             if led.value() == 0:
@@ -30,6 +32,9 @@ def blink_led(pin, sleep_time_ms):
     except KeyboardInterrupt:  # Ctl-Cによる中断を検出
         print("例外'KeyboardInterrupt'を捕捉")
         led.off()
+    
+    return
+
 
 if __name__ == "__main__":
     SLEEP_TIME_MS = 500
@@ -37,4 +42,3 @@ if __name__ == "__main__":
         pin=ON_BOAD_LED,
         sleep_time_ms=SLEEP_TIME_MS,
     )
-

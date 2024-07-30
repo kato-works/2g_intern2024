@@ -12,6 +12,7 @@ URL = 'http://192.168.4.1:5000/'  # POSTリクエストを送信するURL
 led_sensor_detect = Pin(13, Pin.OUT)  # センサー反応中に点灯するLED
 sensor = Pin(4, Pin.IN)  # 人感センサー
 
+
 def sensor_triggerd(sensor_pin):
     """
     センサーが押されたら
@@ -42,6 +43,7 @@ def sensor_triggerd(sensor_pin):
 
     return
 
+
 def connect_wifi(ssid, password):
     """
     Wi-Fiへ接続
@@ -60,6 +62,7 @@ def connect_wifi(ssid, password):
         time.sleep(1)
     print('Network connected:', wlan.ifconfig())
     return wlan
+
 
 def post_data(url, data):
     """
@@ -96,4 +99,3 @@ while True:
 
 # WiFiから切断
 wlan.disconnect()
-
