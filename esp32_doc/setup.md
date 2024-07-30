@@ -7,7 +7,7 @@
 1. ESP32をPCにUSBケーブルで接続
 1. Windowsの「デバイスマネージャ」を起動し「ポート(COMとLPT)」に「USB-SERIAL CH340 (COMXX) 」と表示されていることを確認
    - COMXXは各自で異なるので、メモしてください
-   - <image src=",,/images/device_manager.png">
+   - <image src="../images/device_manager.png">
 1. USB-SERIALの表示がない場合には、先述のCH340のドライバをインストールして再接続
 
 ## ファームウェアの書き込み
