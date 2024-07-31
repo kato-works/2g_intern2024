@@ -1,7 +1,7 @@
 import time
 from machine import Pin
 
-ON_BOAD_LED = 2
+PIN_NO_LED = 2  # オンボードLEDのGPIO
 
 
 def blink_led(sleep_time_ms):
@@ -14,7 +14,7 @@ def blink_led(sleep_time_ms):
     sleep_time_ms : int
         明滅間隔（ミリ秒）
     """
-    led = Pin(ON_BOAD_LED, Pin.OUT)
+    led = Pin(PIN_NO_LED, Pin.OUT)
 
     try:
         while True:

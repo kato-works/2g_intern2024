@@ -1,6 +1,9 @@
 import time
 from machine import Pin
 
+PIN_NO_LED = 2  # オンボードLEDのGPIO
+PIN_NO_BUTTON = 0  # オンボードボタンのGPIO
+
 led = None
 
 
@@ -42,10 +45,7 @@ def button_push(pin):
 
 
 if __name__ == "__main__":
-    led_pin_no = 2
-    button_pin_no = 0
-
-    set_event(led_pin_no=2, button_pin_no=0)
+    set_event(led_pin_no=PIN_NO_LED, button_pin_no=PIN_NO_BUTTON)
 
     try:
         while True:

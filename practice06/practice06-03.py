@@ -1,8 +1,9 @@
 from machine import Pin
 import time
 
-# センサーの反応した回数
-count = 0
+PIN_NO_SENSOR = 4  # センサーのOUTと接続したGPIO
+
+count = 0  # センサーの反応した回数
 
 
 def sensor_trigger(pin):
@@ -42,7 +43,7 @@ def set_trigger(pin_no):
 
 
 if __name__ == "__main__":
-    set_trigger(pin_no=4)
+    set_trigger(pin_no=PIN_NO_SENSOR)
     try:
         while True:
             time.sleep(1)

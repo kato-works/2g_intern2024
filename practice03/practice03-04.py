@@ -2,6 +2,7 @@ import time
 from machine import Pin
 from machine import TouchPad
 
+# 状態監視するピンの一覧
 pin_no_list = [2, 4, 15, 13, 12, 14, 27, 33, 32]
 
 

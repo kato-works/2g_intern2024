@@ -40,4 +40,10 @@ ESP32の好きなGPIOのピンから、ブレッドボード上の抵抗・LED�
 
 GPIOは、ONになると3.3Vの電圧がかかります。
 
+## ブレッドボードサンプル
+
+あくまでサンプルの配線なので、自分で思うように実装してください。
+
+<img alt="practice05.png" src="practice05.png" width="500px">
+
 [トップへ戻る](../README.md)

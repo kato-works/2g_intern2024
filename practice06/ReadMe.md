@@ -35,7 +35,7 @@ https://www.image.micros.com.pl/_dane_techniczne_auto/cz%20am312.pdf
 
 センサーからは３本の端子が出ておりそれぞれ
 
-- VIN : センサー駆動用の電圧入力　ESP32の3V3の端子に接続
+- VIN : センサー駆動用の電圧入力　ESP32の3V3(3.3V)かVIN(5V)の端子に接続
 - OUT : センサーが検出時に電圧が上がる、入力用のGPIOに接続
 - GND : グランド（GND）に接続
 
@@ -50,5 +50,11 @@ ir_sensor = Pin(4, Pin.IN)  # GPIO4を、入力ピンとして設定
 value = ir_sensor.value()  # ピンの値を読み込む
 print(f'ir_sensor: {value}')
 ```
+
+## ブレッドボードサンプル
+
+あくまでサンプルの配線なので、自分で思うように実装してください。
+
+<img alt="practice06.png" src="practice06.png" width="500px">
 
 [トップへ戻る](../README.md)

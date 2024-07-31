@@ -2,6 +2,9 @@ import time
 from machine import Pin
 from machine import TouchPad
 
+PIN_NO_TOUCH = 32  # 静電容量を見るピンのGPIO
+PIN_NO_LED = 2  # オンボードLEDのGPIO
+
 
 def read_touch_pad(touch_pin, led_pin, sleep_time_ms: int = 200, threshold: int = 150):
     """
@@ -52,7 +55,7 @@ def read_touch_pad(touch_pin, led_pin, sleep_time_ms: int = 200, threshold: int 
 if __name__ == "__main__":
     SLEEP_TIME_MS = 200
     read_touch_pad(
-        touch_pin=32,
-        led_pin=2,
+        touch_pin=PIN_NO_TOUCH,
+        led_pin=PIN_NO_LED,
         sleep_time_ms=SLEEP_TIME_MS,
     )

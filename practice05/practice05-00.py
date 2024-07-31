@@ -1,6 +1,8 @@
 import time
 from machine import Pin
 
+PIN_NO_LED = 13  # LEDを接続したGPIO
+
 
 def blink_led(pin, sleep_time_ms):
     """
@@ -31,9 +33,8 @@ def blink_led(pin, sleep_time_ms):
 
 
 if __name__ == "__main__":
-    pin = 13
     SLEEP_TIME_MS = 500
     blink_led(
-        pin=pin,
+        pin=PIN_NO_LED,
         sleep_time_ms=SLEEP_TIME_MS,
     )

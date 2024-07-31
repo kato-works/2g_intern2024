@@ -9,8 +9,11 @@ SSID = 'intern2024'       # Wi-FiのSSID
 PASSWORD = 'password2024'  # Wi-Fiのパスワード
 URL = 'http://192.168.4.1:5000/'  # POSTリクエストを送信するURL
 
-led_sensor_detect = Pin(13, Pin.OUT)  # センサー反応中に点灯するLED
-sensor = Pin(4, Pin.IN)  # 人感センサー
+PIN_NO_SENSOR_LED = 13
+PIN_NO_IR_SENSOR = 4
+
+led_sensor_detect = Pin(PIN_NO_SENSOR_LED, Pin.OUT)  # センサー反応中に点灯するLED
+sensor = Pin(PIN_NO_IR_SENSOR, Pin.IN)  # 人感センサー
 
 
 def sensor_triggerd(sensor_pin):

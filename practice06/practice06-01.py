@@ -1,6 +1,8 @@
 import time
 from machine import Pin
 
+PIN_NO_SENSOR = 4  # センサーのOUTと接続したGPIO
+
 
 def read_pin(pin_num, sleep_time_ms):
     """
@@ -25,6 +27,6 @@ def read_pin(pin_num, sleep_time_ms):
 if __name__ == "__main__":
     SLEEP_TIME_MS = 1000
     read_pin(
-        pin_num=4,
+        pin_num=PIN_NO_SENSOR,
         sleep_time_ms=SLEEP_TIME_MS,
     )

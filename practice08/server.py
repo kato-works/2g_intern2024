@@ -1,4 +1,3 @@
-# POSTされたパラメータを大きく表示するだけのサーバ
 from datetime import datetime
 
 from flask import Flask
