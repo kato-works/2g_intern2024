@@ -3,7 +3,7 @@ import network
 import urequests
 
 SSID = 'intern2024'       # Wi-FiのSSID
-PASSWORD = 'pasword2024'  # Wi-Fiのパスワード
+PASSWORD = 'password2024'  # Wi-Fiのパスワード
 URL = 'http://192.168.4.1:5000/'  # POSTリクエストを送信するURL
 
 

@@ -31,7 +31,7 @@ ESP32は、Wi-FiやBluetoothを搭載しており、簡単に他のデバイス�
 以下にテスト用のアクセスポイントを用意しました。(インターネットには接続していません。)
 
 - SSID : intern2024
-- PASSWORD : pasword2024
+- PASSWORD : password2024
 
 ### Webサーバ仕様
 

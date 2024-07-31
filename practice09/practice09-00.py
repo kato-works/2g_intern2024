@@ -6,7 +6,7 @@ from machine import Pin
 
 # サーバ設定
 SSID = 'intern2024'       # Wi-FiのSSID
-PASSWORD = 'pasword2024'  # Wi-Fiのパスワード
+PASSWORD = 'password2024'  # Wi-Fiのパスワード
 URL = 'http://192.168.4.1:5000/'  # POSTリクエストを送信するURL
 
 led_sensor_detect = Pin(13, Pin.OUT)  # センサー反応中に点灯するLED
