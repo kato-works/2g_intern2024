@@ -32,6 +32,12 @@ Traceback (most recent call last):
 ValueError: Touch pad error
 ```
 
+## ブレッドボードサンプル
+
+好きなピンからジャンプワイヤーを引き出してください。（下図だとGPIO32）
+
+<img src="practice03.png" width="500px">
+
 ## 以下を実行して結果を確認してみましょう
 
 センサーの値を読み込む
