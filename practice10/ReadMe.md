@@ -21,7 +21,9 @@ R1 = (1.7 / 3.3) * R2
    = 0.52 * R2
 ```
 
-<image src="practice10.png">
+黄色のセンサーの出力を、5.0Vから3.3Vに降圧して32番ピンに入力する例
+
+<image src="practice10.png" width="500px">
 
 ## センサー一覧
 
