@@ -41,3 +41,5 @@
   - 日本語(ちょっと情報が古い) : https://micropython-docs-ja.readthedocs.io/ja/latest/esp32/quickref.html
 - SORACOM IoT DIY レシピ : ESP32に限らずIoTのDIY事例集
   - https://soracom.jp/iot-recipes/
+- Pythonの基礎学習
+  - https://paiza.jp/works/python/trial
