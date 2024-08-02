@@ -37,7 +37,7 @@ while True:
     # 現在のピンの状態を取得
     status = pin.value()
 
-    if prev_status != status:　 # 前回のピン状態と比較し、変化したことを検出
+    if prev_status != status:  # 前回のピン状態と比較し、変化したことを検出
         if status == 0:
             print('ON')
         else:
