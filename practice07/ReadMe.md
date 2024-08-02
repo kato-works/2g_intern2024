@@ -103,13 +103,14 @@ while True:
  
 ```
 
-イベントハンドラは複数設定することはできません。以下のように書くと何が起きるでしょうか
+１つのピンにイベントハンドラは１つしか設定できません。以下のように書くと何が起きるでしょうか
 
 ```python
 import time
 from machine import Pin
 
 def event_rising(pin):
+    # 表示されるか確認しよう
     print(f'event_rising: PIN: {pin}, VALUE: {pin.value()}')
 
 def event_falling(pin):
