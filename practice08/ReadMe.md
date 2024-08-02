@@ -95,7 +95,7 @@ import time
 import network
 
 SSID = 'intern2024'       # Wi-FiのSSID
-PASSWORD = 'pasword2024'  # Wi-Fiのパスワード
+PASSWORD = 'password2024'  # Wi-Fiのパスワード
 
 wlan = network.WLAN(network.STA_IF)  # ステーションインターフェース（STAモード）で初期化
 wlan.active(True)  # チップを起動
