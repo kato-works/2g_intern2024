@@ -64,4 +64,7 @@
   - 同じ処理を何度も繰り返す
   - 複数のデータを受け取る
   - 複数データを分類する
- 
+
+https://github.com/targetblank/micropython_ahtx0/blob/master/ahtx0.py
+
+
