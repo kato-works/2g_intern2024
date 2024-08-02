@@ -96,11 +96,33 @@ def event(pin):
     print(f'PIN: {pin}, VALUE: {pin.value()}')
 
 pin = Pin(0, Pin.IN)  # GPIO0に対して、入力を設定
-pin.irq(trigger=Pin.IRQ_RISING | Pin.IRQ_FALLING, handler=event)  # 値が0->1になったら関数を呼び出し
+pin.irq(trigger=Pin.IRQ_RISING | Pin.IRQ_FALLING, handler=event)  # 値が0->1もしくは、1->0になったら関数を呼び出し
 
 while True:
     time.sleep(1)
  
 ```
+
+イベントハンドラは複数設定することはできません。以下のように書くと何が起きるでしょうか
+
+```python
+import time
+from machine import Pin
+
+def event_rising(pin):
+    print(f'event_rising: PIN: {pin}, VALUE: {pin.value()}')
+
+def event_falling(pin):
+    print(f'event_falling: PIN: {pin}, VALUE: {pin.value()}')
+
+pin = Pin(0, Pin.IN)  # GPIO0に対して、入力を設定
+pin.irq(trigger=Pin.IRQ_RISING, handler=event_rising)
+pin.irq(trigger=Pin.IRQ_FALLING, handler=event_falling)
+
+while True:
+    time.sleep(1)
+ 
+```
+
 
 [トップへ戻る](../README.md)
