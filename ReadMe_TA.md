@@ -21,7 +21,8 @@
 - KEYESTUDIO センサーアソートキット センサモジュール スターター キット(keyestudio 48 in 1 sensor kit)
   - https://wiki.keyestudio.com/KS0349_Keyestudio_48_in_1_Sensor_Kit
   - https://www.amazon.co.jp/gp/product/B0CQJBQ4Y3
-- 抵抗 1KΩ / 2KΩ
+- 分圧回路のための抵抗 1KΩ / 2KΩ
+  - 分圧回路 : https://www.kairo-nyumon.com/resistor_divider.html
 
 ## 開発環境など
 
@@ -43,3 +44,24 @@
   - https://soracom.jp/iot-recipes/
 - Pythonの基礎学習
   - https://paiza.jp/works/python/trial
+  - プログラミングとは
+    - コンピュータを制御するプログラムをつくること
+    - ソースコード：プログラムの記述内容
+    - プログラミング言語：ソースコードを記述する専用言語
+  - はじめてのプログラミング
+    - print('Hello World')
+  - 間違いやすいポイント
+    - エラーを出してみる
+    - 全角半角・大文字小文字
+  - 数値を扱う
+  - プログラムで計算する
+  - 変数にデータを入れる
+  - データを受け取る
+  - 標準入力と標準出力
+  - 条件に一致したら処理を実行する
+  - 条件に合わせて処理を変える
+  - 数値を分類する
+  - 同じ処理を何度も繰り返す
+  - 複数のデータを受け取る
+  - 複数データを分類する
+ 
