@@ -15,45 +15,63 @@
 
 LEDを使った場合にはどのような方法が考えられるでしょうか。
 
+以下のピンはWi-Fiと同時にアナログ値の読込はできないので気をつけましょう。
+
+ADC2を利用するピン
+
+- GPIO0
+- GPIO2
+- GPIO4
+- GPIO12
+- GPIO13
+- GPIO14
+- GPIO15
+- GPIO25
+- GPIO26
+- GPIO27
+
 ## 以下を実行して結果を確認してみましょう
 
-バーグラフを表示してみよう
+アナログ値の読込み
+
+アナログ値を読み込む場合には、センサーに合わせて減衰を設定する必要があります。
+
+- ADC.ATTN_0DB: 0 - 1.1V
+- ADC.ATTN_2_5DB: 0 - 1.5V
+- ADC.ATTN_6DB: 0 - 2.2V
+- ADC.ATTN_11DB: 0 - 3.6V
+
+```python
+from machine import ADC, Pin
+import time
+
+# ADCピンの設定 (例えばGPIO34)
+adc = ADC(Pin(34))
+# ADCの幅を設定（通常は10ビット幅で0〜1023）
+adc.width(ADC.WIDTH_10BIT)
+# ADCの減衰を設定（デフォルトは0dB）
+adc.atten(ADC.ATTN_11DB)  # 11dB attenuation (0-3.6V)
+
+# ADC値の読み取り
+value = adc.read()
+# 読み取った値を表示
+print("ADC Value:", value)    
+
+```
+
+アナログ値を分かりやすく表示する方法を考えて、表示の方法を工夫しよう。
 
 ```python
 import time
-import sys
 import random
 
 
-def print_range_bar(
-    value, 
-    max_value = 100.0, 
-    prefix = 'Volume:', 
-    suffix = '', 
-    length = 50, 
-    fill='█', 
-    print_end="\r"):
-    """
-    バーグラフの表示
+def print_range_bar(value, max_value):
+    percent = int(100.0 * value / max_value)
+    length = 30
+    bar_length = int(30 * value / max_value)
+    print('█' * bar_length + ' ' * (length - bar_length) + f' : {percent} %')
 
-    Parameters
-    ----------
-        value : 現在の値
-        prefix (str): バーの前に表示する文字列
-        suffix (str): バーの後に表示する文字列
-        length (int): バーの長さ
-        fill (str): バーの中を埋める文字
-        print_end (str): 最後に表示する文字列（デフォルトは '\r'）
-    """
-    # ％の計算
-    percent = ("{0:.1f}").format(100 * (value / float(max_value)))
-    # バーの長さの計算
-    filled_length = int(length * value // max_value)
-    # バーの文字列組み立て
-    bar = fill * filled_length + '-' * (length - filled_length)
-    # 表示
-    print(f'{prefix} |{bar}| {percent}% {suffix}', end=print_end)
-    
 # 乱数で仮にボリュームを定義
 volume = 50.0
 max_volume = 100.0
