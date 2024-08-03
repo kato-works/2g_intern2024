@@ -67,4 +67,31 @@
 
 https://github.com/targetblank/micropython_ahtx0/blob/master/ahtx0.py
 
+## 追加で購入したセンサー
 
+- AHT20 温度・湿度センサー
+  - I2Cを介して温度と湿度のデータを取得出来るセンサー
+  - データレイアウト
+    - 0: 0x00 (常に0)
+    - 1: Status (ステータス)
+    - 2: Humidity MSB (湿度上位バイト)
+    - 3: Humidity LSB (湿度中位バイト)
+    - 4: Humidity/Temperature Mixed (湿度下位/温度上位バイト)
+    - 5: Temperature MSB (温度上位バイト)
+    - 6: Temperature LSB (温度下位バイト)
+  - コマンド
+    - 初期化コマンド : 0xBE
+      - センサーをリセットし、初期化
+    - 測定開始コマンド : 0xAC 0x33 0x00
+      - 測定を開始
+- 振動センサー
+  - PIN
+    - S(AO): 振動量
+    - +: 3.3V / 5V
+    - -: GND
+- コンデンサーマイク（LM393）
+  - PIN
+    - AO(AO): マイクのリアルタイム電圧信号
+    - G: GND
+    - +: 3.3V / 5V
+    - DO(DO): 音の強度がしきい値に達すると、信号を出力
