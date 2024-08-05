@@ -9,6 +9,18 @@
 
 I2Cとは I2C（Inter-Integrated Circuit）はフィリップス社（現NXP社）が提唱する通信インターフェースで、クロックに同期させてデータの通信を行う同期式シリアル通信のひとつです。 I2CはSPIと並んで、EEPROMやセンサとのデータ通信によく使われています。
 
+- I2C: 同期式シリアルで２本で通信、１対多の通信を行なう。
+  - SDA (Serial Data Line): データ転送のためのライン
+  - SCL (Serial Clock Line): クロック信号のためのライン
+  
+ESP32では、21ピンがSDAに22ピンがSCLに割り当てられています。
+初期化の際には以下のように設定します。
+
+```python
+# I2Cの初期化
+i2c = I2C(scl=Pin(22), sda=Pin(21), freq=400000)
+```
+
 ## センサーのスペック
 
 AHT20 I2C温度湿度センサー
@@ -96,5 +108,7 @@ print(f'Temperature: {temperature:.2f} C, Humidity: {humidity:.2f} %')
 ```
 
 ## ブレッドボードサンプル
+
+センサー実装基板によって、ピンの配列が異なるので気を付けて。
 
 <img src="practice12.png" width="500px">

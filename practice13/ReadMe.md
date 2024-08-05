@@ -107,9 +107,9 @@ R1 = (1.7 / 3.3) * R2
   - 赤外線障害物センサ
   - PIN
     - EN: リセットなので接続しない
-    - OUT(DO): 
-    - +: 3.3V / 5V
-    - GND: GND
+    - S(DO): 
+    - V: 3.3V / 5V
+    - G: GND
 - 11: Photo Interrupter Module
   - フォトインタラプタ
   - PIN
