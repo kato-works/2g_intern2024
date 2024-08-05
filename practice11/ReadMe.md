@@ -85,3 +85,5 @@ pwm.duty(duty)
 ```
 
 ## ブレッドボードサンプル
+
+<img src="practice11.png" width="500px">

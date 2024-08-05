@@ -94,3 +94,7 @@ temperature = (((data[3] & 0x0F) << 16) | (data[4] << 8) | data[5]) / (1 << 20) 
 
 print(f'Temperature: {temperature:.2f} C, Humidity: {humidity:.2f} %')
 ```
+
+## ブレッドボードサンプル
+
+<img src="practice12.png" width="500px">

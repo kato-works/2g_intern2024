@@ -91,3 +91,5 @@ while True:
 ```
 
 ## ブレッドボードサンプル
+
+<img src="practice10.png" width="500px">
