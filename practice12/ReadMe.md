@@ -9,11 +9,22 @@
 
 I2Cとは I2C（Inter-Integrated Circuit）はフィリップス社（現NXP社）が提唱する通信インターフェースで、クロックに同期させてデータの通信を行う同期式シリアル通信のひとつです。 I2CはSPIと並んで、EEPROMやセンサとのデータ通信によく使われています。
 
-## AHT20
+## センサーのスペック
+
+AHT20 I2C温度湿度センサー
+
+<img src="AHT20.jfif" width="300px">
 
 AHT20のデータシートを読んでみよう
 
 https://files.seeedstudio.com/wiki/Grove-AHT20_I2C_Industrial_Grade_Temperature_and_Humidity_Sensor/AHT20-datasheet-2020-4-16.pdf
+
+
+AHT20のコマンド
+```text
+b'\xBE': 初期化
+b'\xAC\x33\x00' : 測定指示
+```
 
 AHT20のデータレイアウト
 
