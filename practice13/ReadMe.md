@@ -47,17 +47,19 @@ R1 = (1.7 / 3.3) * R2
 - 1: White LED Module
   - 白色LED（ON/OFF制御）
   - PIN
-    - S: ON/OFF
+    - S(DI): ON/OFF
     - +: 5V
     - -: GND
 - 2: RGB LED Module
   - フルカラーLED（アナログ3ch）
   - PIN
-    - G: Analog Green
-    - R: Analog Red
-    - B: Analog Blue
-    - V: 5V
+    - G(AI): Analog Green
+    - R(AI): Analog Red
+    - B(AI): Analog Blue
+    - G: Ground
+  - 5V用のLEDなので3.3Vだと少し暗いかも
   - 残念ながらESP32はアナログ2chまでなのでフルカラーにはなりません。
+  - PWMを用いるか、さらにローパスフィルターを設定する必要があります（PWNでここは十分）
 - 3: 3W LED Module
   - 明るいLED
   - PIN
@@ -67,9 +69,9 @@ R1 = (1.7 / 3.3) * R2
 - 4: Traffic Light Module
   - ３色表示LED
   - PIN
-    - R(AI): Red
-    - Y(AI): Yellow
-    - G(AI): Green
+    - R(DI): Red
+    - Y(DI): Yellow
+    - G(DI): Green
     - GND: GND
 - 5: Active Buzzer Module
   - アクティブブザー
@@ -107,7 +109,7 @@ R1 = (1.7 / 3.3) * R2
   - 赤外線障害物センサ
   - PIN
     - EN: リセットなので接続しない
-    - S(DO): 
+    - S(DO): 障害物の検出
     - V: 3.3V / 5V
     - G: GND
 - 11: Photo Interrupter Module
@@ -289,9 +291,11 @@ R1 = (1.7 / 3.3) * R2
 - 39: LM35 Linear Temperature Sensor
   - 温度センサー
   - PIN
-    - S(AO): 0 ~ 100℃
+    - S(AO): 0 ~ 100℃ (10mV/℃)
     - +: 5V
     - -: GND
+  - 3.3Vに降圧して利用した場合には以下の計算式（そのまま直結した場合には500.0）
+    - adc.read() * 330.0 / 1023
 - 40: DHT11 Temperature and Humidity Sensor
   - 温度・湿度センサー
   - PIN
@@ -347,6 +351,7 @@ R1 = (1.7 / 3.3) * R2
     - Trig(DI): 発信指示
     - Echo(DO): 受信検知
     - GND: GND
+  - machine.time_pulse_usを使うと応答時間が計測できます。
 - 47: Keystudio 0820 LCD module 5V blue screen
   - LCDスクリーン
 - 48: Keystudio 8x8 LED Matrix Module Address Select
