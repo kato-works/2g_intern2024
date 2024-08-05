@@ -11,7 +11,7 @@ led = Pin(led_pin, Pin.OUT)
 pwm = PWM(led)
 
 # PWMの周波数を設定（例: 500Hz）
-pwm.freq(20)
+pwm.freq(500)
 
 duty = 256
 
