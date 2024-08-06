@@ -5,7 +5,6 @@
 シリアルドライバイアは、接続した際にCOMポートに表示がされない場合にインストールしてください。（WindosではCOM、Macでは/dev/tty.*を確認）
 
 - [Thonny](https://thonny.org/) Python IDE for beginners
-- [FirmWare](https://micropython.org/download/ESP32_GENERIC/) ESP32 MicroPython FirmWare
 - [CH340 Serial Driver](CH341SER.zip) シリアル接続ドライバ
 
 > [!WARNING]
@@ -15,10 +14,6 @@
 
 ## PCとの接続（ドライバのインストール）
 
-1. ESP32のFirmwareをダウンロード
-   - [FirmWare](https://micropython.org/download/ESP32_GENERIC/) ESP32 MicroPython FirmWare
-   - 本実習ではESP32_GENERIC-20240602-v1.23.0.binで動作確認を行っています
-   - <image src="../images/download_firmware.png" width="400px">
 1. ESP32をPCにUSBケーブルで接続
 1. Windowsの「デバイスマネージャ」を起動し「ポート(COMとLPT)」に「USB-SERIAL CH340 (COMXX) 」と表示されていることを確認
    - COMXXは各自で異なるので、メモしてください
@@ -41,11 +36,11 @@
 1. "Which kind of interpreter"から "MicroPython(ESP32)"を選択、"Port WebREPL"から、先ほどメモしたCOMの番号を選択
    - <image src="../images/thonny_03.png" width="350px">
    - <image src="../images/thonny_04.png" width="350px">
-1. 「Install or Update MicroPython (esptool)」のリンクを選択
+1. "Install or Update MicroPython (esptool)"のリンクを選択
    - <image src="../images/thonny_05.png" width="350px">
-1. 「Install MicroPython (esptool)」のTarget portから、先ほどメモしたCOMの番号を選択
+1. "Install MicroPython (esptool)"の"Target port"から、先ほどメモしたCOMの番号を選択
    - <image src="../images/thonny_06.png" width="350px">
-1. 下部のメニューボタン"≡"から"Select local MicroPython image"を選択し、先ほどダウンロードしたFirmwareを選択する。
+1. "MicroPython family"から"ESP32"を、"variant"から"Espressif・ESP32/WROOM"を選択。"version"から"1.23.0"(2024/08現在の最新)を選択
    - <image src="../images/thonny_07.png" width="350px">
 1. "Install"ボタンを押すと、ファームウェアの書き込みがはじまる
    - <image src="../images/thonny_08.png" width="350px">
@@ -57,6 +52,8 @@
 1. Thonnyの画面下部のShellに">>>"と表示されることを確認する。
    - <image src="../images/thonny_12.png" width="350px">
 
+> [!NOTE]
+> ESP32のUSBコネクタは強くないので、折らないように気を付けてください。
 
 ## プログラム実行の確認
 
