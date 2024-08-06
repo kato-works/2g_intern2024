@@ -77,27 +77,37 @@ else:
   print(f'x({x}) < y({y})')
 ```
 
+> [!NOTE]
+> "#" で始まる文言は、"コメント"と呼ばれ実行されません。プログラムを解りやすくするためにコメントを書くクセをつけましょう。
+
 ■ SLEEPの方法:　一定時間プログラム実行を停止する  
 
 ```python
 import time  # ライブラリのインポート
 
 print('Hello')
-time.sleep(1)
+time.sleep(1)  # 1秒休止
 print('Hello!')
-time.sleep_ms(500)
+time.sleep_ms(500)  # 500ミリ秒休止
 print('Hello!!')
 ```
+
+> [!NOTE]
+> ライブラリは、他のプログラムから引用できる状態に定型化されたプログラムです。有効活用することで効率的にプログラミングを進めることが出来ます。
 
 ■ WHILE句(Ctl+Cでプログラム実行の中断): 終了条件を決めて処理をループする
 
 ```python
 import time
 
-while True:
+while True:  # True（真）である間は繰り返す
   print('Hello')
   time.sleep(1)
 ```
+
+> [!NOTE]
+> プログラミングでは、数値や文字の他に、booleanと呼ばれる真・偽を表すTrue/Falseが用いられます。
+> 先ほどのif文で x > y と判定した結果も、このbooleanのTrueかFalseとして扱われています。
 
 ■ FOR句: 実行回数を決めて処理をループする
 
@@ -113,10 +123,16 @@ for i in range(5):
 
 ```python
 def print_with_exclamation(message, count=3):
-  print(message + '!' * count)
+  result_message = message + '!' * count
+  print(result_message)
+  return result_message
 
 print_with_exclamation('Hello')
 print_with_exclamation('Hello', 5)
 ```
+
+> [!NOTE]
+> 関数は、入力である引数（ここではmessageとcount）、処理内容（ここでは、messageにcountの数だけ!を足してシリアルに表示する）、出力である戻り値（ここではresult_message）で構成されます。
+> このサンプルでは戻り値は利用せずに捨てています。
 
 [トップへ戻る](../README.md)
