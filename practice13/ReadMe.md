@@ -151,7 +151,7 @@ R1 = (1.7 / 3.3) * R2
 - 9: Line Tracing Sensor
   - ライントレースセンサー
   - PIN
-    - S(DI): ON/OFF
+    - S(DO): ON/OFF
     - +: 5V
     - -: GND
   - 白い背景に黒い線・黒い背景に白い線を判定
