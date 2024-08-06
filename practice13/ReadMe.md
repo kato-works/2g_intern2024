@@ -61,6 +61,7 @@ R1 = (1.7 / 3.3) * R2
     - S(DI): ON/OFF
     - +: 5V
     - -: GND
+  - 抵抗がすでに入っているので、挟む必要はありません
 - 2: RGB LED Module
   - フルカラーLED（アナログ3ch）
   - PIN
@@ -71,12 +72,14 @@ R1 = (1.7 / 3.3) * R2
   - 5V用のLEDなので3.3Vだと少し暗いかも
   - 残念ながらESP32はアナログ2chまでなのでフルカラーにはなりません。
   - PWMを用いるか、さらにローパスフィルターを設定する必要があります（PWNでここは十分）
+  - 抵抗がすでに入っているので、挟む必要はありません
 - 3: 3W LED Module
   - 明るいLED
   - PIN
     - S(DI): ON/OFF
     - +: 3.3V / 5V
     - -: GND
+  - 抵抗がすでに入っているので、挟む必要はありません
 - 4: Traffic Light Module
   - ３色表示LED
   - PIN
@@ -84,6 +87,7 @@ R1 = (1.7 / 3.3) * R2
     - Y(DI): Yellow
     - G(DI): Green
     - GND: GND
+  - 抵抗がすでに入っているので、挟む必要はありません
 - 5: Active Buzzer Module
   - アクティブブザー
   - PIN
@@ -173,6 +177,7 @@ R1 = (1.7 / 3.3) * R2
     - S(DO): ON/OFF
     - +: 3.3V / 5V
     - -: GND
+  - 今までの実習課題で使ったものと同じセンサーです
 - 19: Analog Temperature Sensor
   - アナログ温度計
   - PIN
@@ -196,7 +201,7 @@ R1 = (1.7 / 3.3) * R2
 - 22: Analog Sound Sensor
   - 音量センサー
   - PIN
-    - S(AO): 明るさ
+    - S(AO): 音量
     - +: 3.3V / 5V
     - -: GND
 - 23: Water Sensor
