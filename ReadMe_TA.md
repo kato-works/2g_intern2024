@@ -11,6 +11,8 @@
 
 ## 準備物
 
+以下を買いそろえる、2024年度はESP32はインターン生にプレゼントした。
+
 - ESP-WROOM-32
   - ESP32の30PinでType-Cインタフェースのもの、時々オンボードのLEDがないタイプがあるので注意
   - https://www.amazon.co.jp/gp/product/B0C1444DRX
