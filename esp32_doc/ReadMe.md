@@ -1,4 +1,3 @@
-
 # ESP32 リファレンス
 
 <img alt="esp32" src="esp32.jpg" width="200pix"/>
