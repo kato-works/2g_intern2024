@@ -63,6 +63,53 @@ count = 1
 print(count + 5)
 ```
 
+■ 型: 変数やデータの種類
+
+PythonやMicroPythonでは、型は自動的に決まります。つまり、変数に値を代入すると、その値に応じて型が自動的に決まります。
+
+型はtype(x)のようにすると調べることができます。
+
+```python
+# 整数型 (int)
+a = 10
+print(f"aの値は{a}、型は{type(a)}")
+
+# 浮動小数点数型 (float)
+b = 3.14
+print(f"bの値は{b}、型は{type(b)}")
+
+# 文字列型 (str)
+c = "Hello, MicroPython!"
+print(f"cの値は{c}、型は{type(c)}")
+
+# ブール型 (bool)
+d = True
+print(f"dの値は{d}、型は{type(d)}")
+```
+
+■ 少し特殊な型 : 複数の値をまとめて扱う型としてlistとdictが良く利用されます。
+
+listは、同じような属性の値をまとめて取り扱いたい、順番を意識する際に利用します。プログラムでは1番目が0番目なので注意が必要です。
+
+dictは、複数の値を名前を付けてまとめて取り扱いたいときに利用します。
+
+```python
+# リスト型 (list)
+e = [1, 2, 3, 4, 5]
+print(f"dの値は{e}、型は{type(e)}")
+print(f"dの1番目の値は{e[0]}")
+print(f"dの2番目の値は{e[1]}")
+print(f"dの3番目の値は{e[2]}")
+print(f"dの4番目の値は{e[3]}")
+print(f"dの5番目の値は{e[4]}")
+
+# 辞書型 (dict)
+f = {"name": "Alice", "age": 25}
+print(f"fの値は{f}、型は{type(f)}")
+print(f"fの'name'の値は{f['name']}、型は{type(f['name'])}")
+print(f"fの'age'の値は{f['age']}、型は{type(f['age'])}")
+```
+
 ■ 条件分岐: プログラムに判定をさせる
 
 ```python
@@ -105,6 +152,21 @@ while True:  # True（真）である間は繰り返す
   time.sleep(1)
 ```
 
+終了条件を設定することで、プログラムをを先にすすめることが出来ます。
+
+```python
+import time
+
+count = 0
+
+while count < 5:  # countが5未満の間実行する
+  print(f'Hello {count}')
+  count = count + 1
+  time.sleep(1)
+
+print(f'count = {count}')
+```
+
 > [!NOTE]
 > プログラミングでは、数値や文字の他に、booleanと呼ばれる真・偽を表すTrue/Falseが用いられます。
 > 先ほどのif文で x > y と判定した結果も、このbooleanのTrueかFalseとして扱われています。
@@ -114,10 +176,25 @@ while True:  # True（真）である間は繰り返す
 ```python
 import time
 
-for i in range(5):
+for i in range(5):  # range(5)とすることで0~4まで5回実行され、変数iに数字が代入されます
   print(f'Hello:{i}')
   time.sleep(1)
 ```
+
+for文では、listの中身を順に取り出すことが出来ます。
+
+```python
+import time
+
+array = ["KATO", "WORKS"]
+
+for word in array:
+  print(word)
+  time.sleep(1)
+```
+
+> [!NOTE]
+> listとforを組み合わせることで、プログラムをシンプルに読みやすくすることが出来ます。
 
 ■ 関数: 処理をまとめて、再利用可能にする仕組み
 
