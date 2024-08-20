@@ -149,3 +149,4 @@ https://github.com/targetblank/micropython_ahtx0/blob/master/ahtx0.py
     - G: GND
     - +: 3.3V / 5V
     - DO(DO): 音の強度がしきい値に達すると、信号を出力
+- OLEDディスプレイ
