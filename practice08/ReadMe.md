@@ -139,7 +139,7 @@ print('Response status:', response.status_code)  # GET処理結果
 print('Response content:', response.text)  # サーバから返却されたデータ
 ```
 
-WebサーバからGETリクエストによるデータの送信
+WebサーバからGETリクエストによるデータの送信（GETのパラメータはスペースを受け付けないので気を付けましょう。）
 
 ```python
 import urequests
