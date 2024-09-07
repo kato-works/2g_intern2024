@@ -87,3 +87,48 @@ pwm.duty(duty)
 ## ブレッドボードサンプル
 
 <img src="practice11.png" width="500px">
+
+## PWMを測定してみよう
+
+PWMを利用して動いているデバイスを解析してみよう。
+
+```python
+from machine import Pin
+import time
+
+# PWM信号の入力ピン
+pwm_pin = Pin(14, Pin.IN)
+
+def measure_pwm(pin):
+    # ハイとロウの時間を計測
+    high_time = 0
+    low_time = 0
+    
+    # ピンがHIGHになるまで待つ
+    while pin.value() == 0:
+        pass
+    start_time = time.ticks_us()  # マイクロ秒単位での時間測定開始
+    
+    # ピンがLOWになるまでのHIGHの時間を計測
+    while pin.value() == 1:
+        pass
+    high_time = time.ticks_diff(time.ticks_us(), start_time)
+    
+    # ピンがHIGHになるまでのLOWの時間を計測
+    start_time = time.ticks_us()
+    while pin.value() == 0:
+        pass
+    low_time = time.ticks_diff(time.ticks_us(), start_time)
+    
+    # 周期時間とデューティサイクルを計算
+    period = high_time + low_time
+    duty_cycle = (high_time / period) * 100
+    
+    return period, duty_cycle
+
+# PWM信号の計測
+while True:
+    period, duty_cycle = measure_pwm(pwm_pin)
+    print("Period: {} us, Duty Cycle: {:.2f}%".format(period, duty_cycle))
+    time.sleep(1)
+```
