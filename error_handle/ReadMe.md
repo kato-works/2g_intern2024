@@ -47,6 +47,23 @@ MicroPythonはエラーが出た場合に、プログラムの何行目で何の
 
 エラーにトレースバックが表示されている場合には、どのような順にプログラムが実行されエラーになったかが分かります。最終的にエラーが発生した場所が分かるだけなので、原因はここからさかのぼっていく必要があるかもしれません。
 
+```text
+Traceback (most recent call last):
+  File "<stdin>", line 2, in <module>   # line 2 と表記があるので、２行目でエラー
+NameError: name 'Name' isn't defined
+```
+
+### 発生したエラーの内容の確認
+
+どんなエラーが起きたのか、エラーの内容は何かが表示されます。
+下記のエラー例であればエラーの種類は、"NameError"で、エラーの内容は"name 'Name' isn't defined"なので、「'Name'という名前が定義されていないよ」となります。
+
+```text
+Traceback (most recent call last):
+  File "<stdin>", line 2, in <module>
+NameError: name 'Name' isn't defined   # NameErrorが発生
+```
+
 ### 原因の追い込み（デバッグ）
 
 エラーが発生したということは、値（変数）が想定外か、処理内容の記述が間違っているかどちらかです。print句で値を表示して原因を追い込んでいきましょう。
@@ -61,6 +78,8 @@ value2 = 456
 print(value1, value2)
 ```
 
+以下のように数字が表示されるだけなので、量が多くなるとどこの何の値かわからない。
+
 ```text
 123 456
 ```
@@ -73,13 +92,16 @@ value2 = 456
 print(f'main.py onChangeValue(): value1={value1}, value2={value2}')
 ```
 
+以下のように、変数value1,value2が表示されることを確認しましょう。
+
 ```text
 MPY: soft reboot
 main.py onChangeValue(): value1=123, value2=456
 >>> 
 ```
 
-実際の製品などは、ログと呼ばれる実行履歴を出力しており、モードを変更することでログの詳細度を変えられるようにしていることが多いです。（DEBUG, INFO, WORNING, ERROR, FATALの5段階で出力量を調整する）
+> [!NOTE]
+> 実際の製品などは、日付時刻付きでログと呼ばれる実行履歴を出力しており、モードを変更することでログの詳細度を変えられるようにしていることが多いです。（DEBUG, INFO, WORNING, ERROR, FATALの5段階で出力量を調整する）
 
 ## 以下を実行して結果を確認してみましょう
 

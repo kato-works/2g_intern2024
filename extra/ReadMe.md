@@ -43,6 +43,13 @@ https://docs.sunfounder.com/projects/3in1-kit/ja/latest/components/component_l29
 
 <img src="2morter.png" width="600px">
 
+### モータ仕様
+
+- TTモータ
+- モーターの減速比 1:120
+- 出力電圧 3 ～ 6 V
+- 出力 120 ～ 240 RPM
+
 ### モータ１つを正転させよう
 
 ### モータの回転数を変えてみよう
