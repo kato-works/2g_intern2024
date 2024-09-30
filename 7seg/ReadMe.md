@@ -44,6 +44,18 @@ DIGITS = {
 
 <image src="74HC595.png" width="400px">
 
+| PIN | NOTE |
+| --- | --- |
+| VCC | 電圧供給 |
+| SER | データ入力 |
+| OE | LOWで出力有効(GND) |
+| RCLK | ラッチ |
+| SRCLK | クロック |
+| SRCLR | データクリア（HIGHにしておく） |
+| QH' | カスケード用シリアル出力 |
+| GND | グラウンド |
+| QA~QH | 出力 |
+
 以下の手順でシフトレジスタに指令を送ると、8個のピンに出力を設定できます。
 
 1. ラッチをOFFにしてデータを準備する
@@ -75,6 +87,7 @@ ESP32 GPIO -----> ST_CP (74HC595)
 ```
 
 <image src="7seg.png" width="400px">
+
 
 ## 乱数を発生させる
 
