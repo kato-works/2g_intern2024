@@ -41,7 +41,7 @@ https://docs.sunfounder.com/projects/3in1-kit/ja/latest/components/component_l29
 | 1 | LOW | LOW | 惰性 |
 | 0 | LOW | LOW | 停止 |
 
-<img src="1000_F_353955671_7krywlhsAS9C4QgZQN90XEHHxbukp7In.jpg" width="600px">
+<img src="2morter.png" width="600px">
 
 ### モータ１つを正転させよう
 
@@ -53,4 +53,4 @@ https://docs.sunfounder.com/projects/3in1-kit/ja/latest/components/component_l29
 
 <image src="51v1cEDP8ZL._AC_SY450_.jpg" width="500px">
 
-<image src="wheel-rotations.jpg" width="500px">
+<image src="Mecanum_wheel_control_principle.svg.png" width="500px">
