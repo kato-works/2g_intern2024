@@ -107,6 +107,42 @@ POSTリクエストは、サーバーにデータを送信するために使わ�
 
 例えば、ショッピングサイトへのログイン情報・購入処理など他者に閲覧されたくない情報はPOSTリクエストで送信されています。
 
+### ブラウザを使ってHTTPを見てみよう
+
+Webブラウザのデベロッパツールを起動して（Ctl + Shift + I）、"Network"を選択してください。右側に以下のように表示されることを確認してください。
+
+<image src="devtool.png" width="500px">
+
+アドレスバーに以下のURLを入力してEnterを押してみましょう。
+
+- https://httpbin.org/get
+
+以下のような表示が確認できると思います。これは、サーバ"httpbin.org"に対して、"/get"というGETリクエストを送信したところ、200 OKという結果と、データが返却されたことを示しています。
+
+<image src="get.png" width="400px">
+
+次に、以下のURLをアドレスバーに入力するとダミーのピザオーダーの画面が開きます。
+
+- https://httpbin.org/forms/post
+
+<image src="post_request.png" width="400px">
+
+データを入力して、"Submit Order"のボタンを押すと以下のようにPOSTリクエストが送信されたことがわかります。ここで、Payloadのタブを選択すると送信されたデータを確認することが出来ます。
+
+<image src="post_header.png" width="400px">
+
+画面で入力した値が、サーバに送られていることが確認できます。
+
+<image src="post_payload.png" width="400px">
+
+普段利用している色々なWebサイトがどのようなやりとりを裏で行っているか確認してみるのもいいでしょう、きっと膨大な量のリクエストとレスポンスに驚くかと思います。
+
+- https://www.google.com
+- https://www.amazon.com
+- https://www.youtube.com/
+
+以上はブラウザを利用した例でしたが、本項では画面を介さずにデータのやり取りのみを実装してもらいます。
+
 ## 以下を実行して結果を確認してみましょう
 
 Wi-Fiへの接続
