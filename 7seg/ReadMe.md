@@ -6,6 +6,10 @@
 - シフトレジスタを使ってみる
 - 乱数の扱い
 
+## 実装内容
+
+仕様：数字を高速で表示して、ボタンを押したら0~9までの数字をランダムに表示して止める。再びボタンを押されたら最初に戻る。
+
 ## 7セグのピンとLEDの対応
 
 a ~ g までの7つのLEDと、dpのLED合わせて8個のLEDで数字を表すLED。
@@ -38,6 +42,52 @@ DIGITS = {
 
 <image src="7seg-direct.png" width="400px">
 
+## 以下を実行して結果を確認してみましょう
+
+乱数を発生させてみよう。
+
+```python
+import random
+
+# 0〜9の乱数を生成
+random_number = random.randint(0, 9)
+print(random_number)
+```
+
+１セグメントずつ光らせてみよう。
+
+```python
+from machine import Pin
+
+# GPIOピンアサイン
+# a=4, b=5, c=12, d=13, e=14, f=18, g=19, dp=25
+PIN_ASSIGIN = [4, 5, 12, 13, 14, 18, 19, 25]
+
+for pin_no in PIN_ASSIGIN:
+    print(f'PIN:{pin_no}')
+    pin = Pin(pin_no, Pin.OUT)
+    pin.value(1)
+    time.sleep(0.5)
+    pin.value(0)
+```
+
+数字を表示してみよう
+
+```python
+from machine import Pin
+
+# GPIOピンアサイン
+# a=4, b=5, c=12, d=13, e=14, f=18, g=19, dp=25
+PIN_ASSIGIN = [4, 5, 12, 13, 14, 18, 19, 25]
+# 3を表示する値の一覧
+PIN_VALUES = [1, 1, 1, 1, 0, 0, 1, 0]
+
+# zipは、ループを回す際にセットで取り扱ってくれる
+for pin_no, value in zip(PIN_ASSIGIN, PIN_VALUES):
+    pin = Pin(pin_no, Pin.OUT)
+    pin.value(value)
+```
+
 ## シフトレジスタ
 
 シフトレジスタは、デジタル回路で使われる記憶装置の一種で、データをビット単位で順次移動させることができるものです。今回はシリアルデータをパラレルデータに変換するパラレル出力のものを利用します。
@@ -68,14 +118,14 @@ DIGITS = {
 
 ## シフトレジスタを利用した接続のサンプル
 
-配線は複雑になるが、シフトレジスタを利用することでESP32の出力は3本で済む。
+配線は複雑になるが、シフトレジスタを利用することでESP32の出力は3本で済みます。
 
 ```text
 ESP32 GPIO -----> DS (74HC595)
 ESP32 GPIO -----> SH_CP (74HC595)
 ESP32 GPIO -----> ST_CP (74HC595)
 
-74HC595:
+74HC595 -> 7seg
   Q0 ----[220Ω]-----> a
   Q1 ----[220Ω]-----> b
   Q2 ----[220Ω]-----> c
@@ -87,14 +137,3 @@ ESP32 GPIO -----> ST_CP (74HC595)
 ```
 
 <image src="7seg.png" width="400px">
-
-
-## 乱数を発生させる
-
-```python
-import random
-
-# 0〜9の乱数を生成
-random_number = random.randint(0, 9)
-print(random_number)
-```
