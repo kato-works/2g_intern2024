@@ -45,10 +45,23 @@ https://docs.sunfounder.com/projects/3in1-kit/ja/latest/components/component_l29
 
 ### モータ仕様
 
-- TTモータ
-- モーターの減速比 1:120
-- 出力電圧 3 ～ 6 V
-- 出力 120 ～ 240 RPM
+- エンコーダ
+  - コネクタ：JST XH 6pin(1.5mm)
+  - 黒：VMモーター電源
+  - 赤：GND
+  - 白：ホールセンサー用V型電源
+  - 黄：ホールセンサー用G-GND
+  - オレンジ：ホールセンサーのS1
+  - 緑：ホールセンサーのS2
+
+- 標準動作条件 定格電圧：DC 9.0V
+- ギア比：1/75
+- モーター 無負荷速度：11500±10％rpm
+- 無負荷電流：最大180mA（DC電源）
+- ストール電流：最大4500mA（DC電源）
+- 失速トルク：160g.cm（トルク測定）
+
+https://osoyoo.com/ja/2019/11/08/how-to-test-motor-encoder-with-arduino/
 
 ### モータ１つを正転させよう
 
