@@ -160,3 +160,7 @@ YYの数字が大きい方がより実務に近い良いプログラムですの
 - [13.センサーキットから好きなセンサーを選んで、デバイスを設計・試作しよう](practice13/ReadMe.md)
   - 自分で機能・仕様を考えられるようになる
   - 設計～試作まで自力で進められるようになる
+
+### 設計マインドマップ
+
+[MIRO](https://miro.com/welcomeonboard/SDdhMHVqTjA0RnU3d3pmNmNubHU0Yk5uWGRPOVNOVnZrZ2pYMTRsdUFPV0VKTVVRdTNpRzBNNVlFdFI0SFQ1UXwzMDc0NDU3MzU2MzIxNjk4NzQ4fDI=?share_link_id=986268861750)
