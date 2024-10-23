@@ -71,6 +71,7 @@ ser.write(data)
 - HX711
   - Python : pip install hx711==1.1.2.3
   - microPython : https://github.com/SergeyPiskunov/micropython-hx711
+  - microPython : https://github.com/robert-hh/hx711
 
 ## 3色LED仕様
 
