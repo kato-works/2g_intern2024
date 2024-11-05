@@ -101,12 +101,17 @@ def boot():
 def stop():
     send_signal(0, 1)
 
-# 数値「54」を送信（バイト型に変換して送信）
+# 接続
 boot()
+# 左旋回
 send_signal(calc_signal(NEUTRAL, TURN_LEFT, SPEED_LOW), 1)
+# 前進
 send_signal(calc_signal(MOVE_FORWARD, NEUTRAL, SPEED_LOW), 1)
+# 右旋回
 send_signal(calc_signal(NEUTRAL, TURN_RIGHT, SPEED_LOW), 1)
+# 後退
 send_signal(calc_signal(MOVE_BACKWARD, NEUTRAL, SPEED_LOW), 1)
+# 停止
 stop()
 
 ```
