@@ -60,7 +60,7 @@ data = struct.pack('B', signal)
 ser.write(data)
 ```
 
-```
+```python
 import time
 from machine import UART
 import struct
@@ -86,23 +86,28 @@ def send_signal(commnd, duration):
         uart.write(date)
         time.sleep(0.1)
         
-def calc_signal(switch_boot, switch_fb, switch_lr, dial_speed):
+def calc_signal(switch_fb, switch_lr, dial_speed):
     """
     PICの仕様に合わせてシリアルコードに変換
     :return:
     """
     # 右の３速：(0*3 + 1) * 6 + 3 = 9
-    d = max(switch_boot, (switch_fb * 3 + switch_lr) * 6 + dial_speed)
+    d = max(0, (switch_fb * 3 + switch_lr) * 6 + dial_speed)
     return d
 
+def boot():
+    send_signal(54, 2)
+
+def stop():
+    send_signal(0, 1)
+
 # 数値「54」を送信（バイト型に変換して送信）
-send_signal(calc_signal(BOOT, NEUTRAL, NEUTRAL, 0), 1)
-time.sleep(1)
-send_signal(calc_signal(NEUTRAL, NEUTRAL, TURN_LEFT, 0), 1)
-send_signal(calc_signal(NEUTRAL, MOVE_FORWARD, NEUTRAL, 0), 1)
-send_signal(calc_signal(NEUTRAL, NEUTRAL, TURN_RIGHT, 0), 1)
-send_signal(calc_signal(NEUTRAL, MOVE_BACKWARD, NEUTRAL, 0), 1)
-send_signal(0, 1)
+boot()
+send_signal(calc_signal(NEUTRAL, TURN_LEFT, SPEED_LOW), 1)
+send_signal(calc_signal(MOVE_FORWARD, NEUTRAL, SPEED_LOW), 1)
+send_signal(calc_signal(NEUTRAL, TURN_RIGHT, SPEED_LOW), 1)
+send_signal(calc_signal(MOVE_BACKWARD, NEUTRAL, SPEED_LOW), 1)
+stop()
 
 ```
 
