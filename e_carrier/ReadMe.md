@@ -60,6 +60,62 @@ data = struct.pack('B', signal)
 ser.write(data)
 ```
 
+```python
+import time
+from machine import UART
+import struct
+
+# UARTの設定
+uart = UART(1, baudrate=9600, tx=17, rx=16)  # 使用するピンやボーレートを適宜変更してください
+
+# 信号値
+NEUTRAL = 0
+MOVE_FORWARD = 2
+MOVE_BACKWARD = 1
+TURN_LEFT = 2
+TURN_RIGHT = 1
+BOOT = 54
+SPEED_LOW = 0
+SPEED_HIGH = 5
+
+def send_signal(commnd, duration):
+    start = time.time()
+    while time.time() - start < duration:
+        date = struct.pack('B', commnd)
+        print(f'CONNECT:{date}')
+        uart.write(date)
+        time.sleep(0.1)
+        
+def calc_signal(switch_fb, switch_lr, dial_speed):
+    """
+    PICの仕様に合わせてシリアルコードに変換
+    :return:
+    """
+    # 右の３速：(0*3 + 1) * 6 + 3 = 9
+    d = max(0, (switch_fb * 3 + switch_lr) * 6 + dial_speed)
+    return d
+
+def boot():
+    send_signal(54, 2)
+
+def stop():
+    send_signal(0, 1)
+
+# 接続
+boot()
+# 左旋回
+send_signal(calc_signal(NEUTRAL, TURN_LEFT, SPEED_LOW), 1)
+# 前進
+send_signal(calc_signal(MOVE_FORWARD, NEUTRAL, SPEED_LOW), 1)
+# 右旋回
+send_signal(calc_signal(NEUTRAL, TURN_RIGHT, SPEED_LOW), 1)
+# 後退
+send_signal(calc_signal(MOVE_BACKWARD, NEUTRAL, SPEED_LOW), 1)
+# 停止
+stop()
+
+```
+
 ## LiDAR仕様
 
 ## カメラ仕様
