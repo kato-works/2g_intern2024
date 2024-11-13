@@ -1,0 +1,11 @@
+idf_component_register(
+    SRCS 
+        "main.c"
+        "config.c"
+        "wifi.c"
+        "sdcard.c"
+        "ds3231.c"
+        "ntp.c"
+    INCLUDE_DIRS 
+        "."
+)
