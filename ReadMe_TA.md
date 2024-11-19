@@ -198,30 +198,36 @@ https://github.com/targetblank/micropython_ahtx0/blob/master/ahtx0.py
     - S(AO): 振動量
     - +: 3.3V / 5V
     - -: GND
-    - \689 (5個)
+    - ¥689 (5個)
 - コンデンサーマイク（LM393）
   - PIN
     - AO(AO): マイクのリアルタイム電圧信号
     - G: GND
     - +: 3.3V / 5V
     - DO(DO): 音の強度がしきい値に達すると、信号を出力
+  - https://www.amazon.co.jp/gp/product/B087RC7TMF
+  - ￥639-(5個)
 - OLEDディスプレイ
   - KeeYees OLEDディスプレイ OLEDモジュール 0.96インチ I2C 128X64 SSD1306 4ピン 白 Arduinoに対応 Raspberry Piに対応 3個入り
-  - https://www.amazon.co.jp/gp/product/B08CTZVVLS/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1
-  - \1,680- (3個)
+  - https://www.amazon.co.jp/gp/product/B08CTZVVLS
+  - ¥1,680- (3個)
 - ロードセル
   - Youmile 4個DIY 110lbs 50KGハーフブリッジボディロードセル重量歪みセンサー抵抗+ HX711 ADモジュール
-  - https://www.amazon.co.jp/dp/B084VNV4P6?ref=ppx_yo2ov_dt_b_fed_asin_title
+  - https://www.amazon.co.jp/dp/B084VNV4P6
+  - ¥699-
 
 ## 追加で購入した台車
 
 - オムニホイール台車
-  - OSOYOO メカナムホイール ロボットカーシャーシ 4WD 80mm DC12Vモーター スマートロボット ミニ四駆 台車ロボットSTEM 組み立ておもちゃアルドゥイーノ Raspberry Pi micro bit適用 360°全方向移動Omni directional DIY【グリーンと黒はランダムに発送されます】
-  - https://www.amazon.co.jp/dp/B07Z19HDXP?ref=ppx_yo2ov_dt_b_fed_asin_title&th=1
+  - OSOYOO メカナムホイール ロボットカーシャーシ（モータドライバなし）
+  - https://www.amazon.co.jp/dp/B07Z19HDXP
+  - ¥8,999-
 - クローラ型台車
-  - ロボット自動車シャーシ、エンコーダ付き直流モータ付きロボット戦車車、サスペンションダンパーシャーシ車Ardduion Rpi Microb Jetson Python DIY知能ロボット自動車全金属ロボット移動プラットフォーム軌道 単層
-  - https://www.amazon.co.jp/dp/B0CW36K1J5?ref=ppx_yo2ov_dt_b_fed_asin_title
+  - ロボット自動車シャーシ、エンコーダ付き直流モータ付き
+  - https://www.amazon.co.jp/dp/B0CW36K1J5
+  - ￥15,999-
 - モータードライバ
-  - Ren He 3個セット L298N DCステッパ モータドライバ コントローラ ボード モジュール デュアル Hブリッジ 適用 ステッピングモーター ロボット スマートカー Arduinoと互換
-  - https://www.amazon.co.jp/dp/B092VSCZ5H?ref=ppx_yo2ov_dt_b_fed_asin_title
+  - Ren He 3個セット L298N DCステッパ モータドライバ
+  - https://www.amazon.co.jp/dp/B092VSCZ5H
+  - ￥1,299-(3個)
 
