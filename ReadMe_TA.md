@@ -198,6 +198,7 @@ https://github.com/targetblank/micropython_ahtx0/blob/master/ahtx0.py
     - S(AO): 振動量
     - +: 3.3V / 5V
     - -: GND
+    - \689 (5個)
 - コンデンサーマイク（LM393）
   - PIN
     - AO(AO): マイクのリアルタイム電圧信号
@@ -207,6 +208,7 @@ https://github.com/targetblank/micropython_ahtx0/blob/master/ahtx0.py
 - OLEDディスプレイ
   - KeeYees OLEDディスプレイ OLEDモジュール 0.96インチ I2C 128X64 SSD1306 4ピン 白 Arduinoに対応 Raspberry Piに対応 3個入り
   - https://www.amazon.co.jp/gp/product/B08CTZVVLS/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1
+  - \1,680- (3個)
 - ロードセル
   - Youmile 4個DIY 110lbs 50KGハーフブリッジボディロードセル重量歪みセンサー抵抗+ HX711 ADモジュール
   - https://www.amazon.co.jp/dp/B084VNV4P6?ref=ppx_yo2ov_dt_b_fed_asin_title
